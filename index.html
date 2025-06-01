@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BindValue.dev - Conectando Tecnologia e Valor Humano</title>
+    <link rel="icon" href="favicon.svg" type="images/svg+xml"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <div class="logo" id="main-logo">
+                <img src="images/logo-bindvalue.webp" alt="BindValue.dev Logo" class="logo-image" onerror="handleLogoError(this)">
+                <h1 class="logo-text">BindValue<span>.dev</span></h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#como-funciona">Como Funciona</a></li>
+                    <li><a href="#casos">Casos de Uso</a></li>
+                    <li><a href="#formularios-pdf">Formulários PDF</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contato">Fale Conosco</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo" id="main-logo">
+                <img src="images/logo-bindvalue.webp" alt="BindValue.dev Logo" class="logo-image" onerror="handleLogoError(this)">
+                <h1 class="logo-text">BindValue<span>.dev</span></h1>
+            </div>
+            <div class="close-menu">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#beneficios">Benefícios</a></li>
+                <li><a href="#como-funciona">Como Funciona</a></li>
+                <li><a href="#casos">Casos de Uso</a></li>
+                <li><a href="#formularios-pdf">Formulários PDF</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contato">Fale Conosco</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-cta">
+            <div class="mobile-cta-content">
+                <div class="cta-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Transforme seu Negócio Hoje</h3>
+                <p>Automatize atendimentos e simplifique documentos com nossa tecnologia.</p>
+                <a href="#contato" class="btn btn-primary">Comece Agora <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Soluções Digitais Inteligentes para seu Negócio</h1>
+                <p class="subheadline">Automatize tarefas, humanize interações e foque no crescimento do seu negócio</p>
+                <p class="description">Soluções personalizadas de atendimento inteligente que transformam conversas em resultados</p>
+                <a href="#contato" class="btn btn-primary">Solicite uma Demonstração Gratuita</a>
+            </div>
+            <div class="hero-blocks">
+                <div class="hero-block metric-block">
+                    <div class="block-content">
+                        <div class="block-title">ECONOMIA DE TEMPO</div>
+                        <div class="block-chart">
+                            <div class="chart-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="chart-percent"></div>
+                        </div>
+                        <div class="block-value">70%</div>
+                    </div>
+                </div>
+                <div class="hero-block person-block">
+                    <video class="background-video" autoplay muted loop playsinline>
+                        <source src="videos/person_block.mp4" type="video/mp4" />
+                        Seu navegador não suporta vídeo HTML5.
+                    </video>
+                
+                    <div class="block-content">
+                        <div class="block-header">
+                            <div class="block-title"></div>
+                        </div>
+                        <div class="block-footer">
+                            <div class="check-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="block-info">
+                                <div class="info-title">Conectando Valores!</div>
+                                <div class="info-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-block chart-block">
+                    <div class="block-content">
+                        <div class="chart-visual">
+                            <i class="fa-regular fa-file-pdf"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios Section -->
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <h2>Por que escolher nosso Atendimento IA?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <h3>Otimização de Tempo</h3>
+                    <p>Reduza em até 70% o tempo gasto em atendimentos repetitivos. Sua equipe livre para focar no que realmente importa.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Automação Inteligente</h3>
+                    <p>Respostas precisas e contextualizadas 24/7. Tecnologia avançada que aprende com cada interação.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Atendimento Humanizado</h3>
+                    <p>IA generativa que mantém o tom de voz da sua marca e cria conexões genuínas com seus clientes.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Foco no Core Business</h3>
+                    <p>Enquanto cuidamos do seu atendimento, você concentra recursos no crescimento e inovação do seu negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Como Funciona Section -->
+   <section id="como-funciona" class="how-it-works">
+    <div class="container">
+        <h2>Implementação Simples e Eficiente</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Análise do seu negócio</h3>
+                <p>Entendemos profundamente seu modelo de negócio, público-alvo e necessidades específicas de atendimento.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Desenvolvimento personalizado</h3>
+                <p>Criamos uma solução sob medida, com fluxos de conversação e base de conhecimento exclusivos para sua empresa.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Implementação e testes</h3>
+                <p>Integramos a solução ao seu WhatsApp Business e realizamos testes extensivos para garantir funcionamento perfeito.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Acompanhamento contínuo</h3>
+                <p>Oferecemos suporte técnico e atualizações constantes para que sua solução evolua junto com seu negócio.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Casos de Uso Section -->
+    <section id="casos" class="use-cases">
+        <div class="container">
+            <h2>Ideal para Diversos Segmentos</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-commerce</h3>
+                    <p>Automatize dúvidas sobre produtos, rastreamento de pedidos e processo de devolução.</p>
+                </div>
+                <div class="case-card">
+                    <div class="icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>Serviços</h3>
+                    <p>Agendamentos, confirmações e lembretes automáticos com possibilidade de reagendamento inteligente.</p>
+                </div>
+                <div class="case-card">
+                    <div class="icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Saúde</h3>
+                    <p>Triagem inicial, lembretes de consultas e orientações pós-atendimento personalizadas.</p>
+                </div>
+                <div class="case-card">
+                    <div class="icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Educação</h3>
+                    <p>Suporte ao aluno, dúvidas frequentes sobre cursos e acompanhamento de progresso acadêmico.</p>
+                </div>
+                <div class="case-card">
+                    <div class="icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Imobiliário</h3>
+                    <p>Qualificação de leads, agendamento de visitas e respostas imediatas sobre imóveis disponíveis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Formulários PDF Section -->
+      <section id="formularios-pdf" class="pdf-forms">
+        <div class="container">
+            <h2>Formulários PDF com Assinatura Digital</h2>
+            <p class="section-subtitle">Transforme documentos estáticos em formulários interativos com validade jurídica</p>
+            
+            <div class="pdf-content">
+                <div class="pdf-image">
+                    <div class="pdf-icon">
+                        <i class="far fa-file-pdf"></i>
+                        <div class="signature-elements"></div>
+                    </div>
+                </div>
+                <div class="pdf-description">
+                    <p>Simplifique processos burocráticos transformando seus PDFs em formulários online inteligentes. Obtenha assinaturas digitais com validade jurídica conforme a norma ICP-Brasil, agilizando contratos e documentos que exigem aprovação de múltiplas partes.</p>
+                    <a href="index.html#contato" class="btn btn-primary">Simplifique seus processos documentais</a>
+                </div>
+            </div>
+            
+            <div class="pdf-benefits">
+                <div class="pdf-benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-file-import"></i>
+                    </div>
+                    <h3>Transformação Digital</h3>
+                    <p>Converta qualquer PDF em formulário interativo online, eliminando impressões e digitalizações.</p>
+                </div>
+                <div class="pdf-benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Validade Jurídica</h3>
+                    <p>Assinaturas digitais em conformidade com a norma ICP-Brasil, garantindo segurança jurídica total.</p>
+                </div>
+                <div class="pdf-benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Múltiplas Assinaturas</h3>
+                    <p>Gerencie documentos que precisam ser assinados por várias partes, com acompanhamento em tempo real.</p>
+                </div>
+                <div class="pdf-benefit-card">
+                    <div class="icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3>Envio Automatizado</h3>
+                    <p>Distribua documentos via e-mail e receba notificações quando forem assinados.</p>
+                </div>
+            </div>
+            
+            <div class="pdf-use-cases">
+                <h3>Aplicações Ideais</h3>
+                <div class="pdf-cases-grid">
+                    <div class="pdf-case">
+                        <i class="fas fa-file-contract"></i>
+                        <p>Contratos Comerciais</p>
+                    </div>
+                    <div class="pdf-case">
+                        <i class="fas fa-building"></i>
+                        <p>Documentos Imobiliários</p>
+                    </div>
+                    <div class="pdf-case">
+                        <i class="fas fa-user-tie"></i>
+                        <p>Recursos Humanos</p>
+                    </div>
+                    <div class="pdf-case">
+                        <i class="fas fa-balance-scale"></i>
+                        <p>Área Jurídica</p>
+                    </div>
+                    <div class="pdf-case">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p>Área Educacional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quanto tempo leva para implementar a solução?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O processo completo leva de 2 a 4 semanas, dependendo da complexidade do seu negócio e das integrações necessárias.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>A IA consegue entender diferentes formas de perguntar a mesma coisa?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Nossa tecnologia de processamento de linguagem natural identifica a intenção por trás das perguntas, mesmo quando formuladas de maneiras diferentes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>É possível integrar com meus sistemas internos?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutamente. Desenvolvemos conectores personalizados para integrar com seus CRMs, ERPs e outras ferramentas que sua empresa já utiliza.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como garantem a segurança dos dados?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Seguimos rigorosamente a LGPD e utilizamos criptografia de ponta a ponta. Seus dados nunca são compartilhados e você mantém total propriedade sobre eles.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Preciso de conhecimento técnico para operar o sistema?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não. Nossa interface é intuitiva e oferecemos treinamento completo para sua equipe. Além disso, nosso suporte técnico está sempre disponível.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>As assinaturas digitais têm validade jurídica?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. Nossas assinaturas digitais estão em conformidade com a norma ICP-Brasil, garantindo validade jurídica em todo o território nacional.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>É possível solicitar que o remetente envie um documento e que ele seja anexado ao formulário ou contrato que está assinando?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. É possível solicitar que o remetente anexe documentos durante o preenchimento do formulário ou assinatura do contrato, garantindo que tudo fique registrado em um único processo.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Posso enviar um mesmo documento para que várias pessoas assinem simultaneamente?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. Você pode enviar o link do formulário ou contrato para múltiplos assinantes ao mesmo tempo. As respostas serão coletadas de forma individual e enviadas para o e-mail que você definir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contato" class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para transformar seu atendimento?</h2>
+                <p>Solicite uma demonstração gratuita hoje mesmo e veja como podemos revolucionar a comunicação com seus clientes.</p>
+            </div>
+            <div class="cta-form">
+                    <button type="submit" class="btn btn-primary">QUERO AUTOMATIZAR MEU ATENDIMENTO</button>
+                    <p class="privacy-note">Seus dados estão seguros conosco. Não compartilhamos suas informações com terceiros.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo logo">
+                    <img src="images/logo_bindvalue-light.webp" alt="BindValue Logo" class="logo-image" onerror="handleLogoError(this)" />
+                    <h2 class="logo-fallback">BindValue<span>.dev</span></h2>
+                    <p>Conectando tecnologia e valor humano</p>
+                  </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#casos">Casos de Uso</a></li>
+                        <li><a href="#formularios-pdf">Formulários PDF</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contato">Fale Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@bindvalue.dev</p>
+                    <p><i class="fas fa-phone"></i> (31) 98236-3598</p>
+                    <p><i class="fas fa-phone"></i> (31) 98112-2905</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 BindValue.dev. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
