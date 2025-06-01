@@ -21,6 +21,19 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             header.classList.remove('scrolled');
         }
+        const logoImg = document.getElementById('main-logo-img');
+
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+            if (logoImg) {
+                logoImg.src = 'images/logo_bindvalue_light.webp';
+            }
+        } else {
+            header.classList.remove('scrolled');
+            if (logoImg) {
+                logoImg.src = 'images/logo_bindvalue.webp';
+            }
+        }
     }
 
     // Função para ativar o fallback quando a imagem falhar
