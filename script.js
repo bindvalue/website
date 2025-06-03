@@ -251,46 +251,93 @@ const MobileMenuController = {
         NavigationController.init();
     });
 
-/**
- * Controlador de FAQ
- * Gerencia a abertura e fechamento dos itens de FAQ
- */
-const FAQController = {
-    faqItems: null,
-    
     /**
-     * Inicializa o controlador de FAQ
+     * Controlador de FAQ
+     * Gerencia a abertura e fechamento dos itens de FAQ
      */
-    init: function() {
-        this.faqItems = document.querySelectorAll('.faq-item');
-        
-        if (this.faqItems.length === 0) return;
-        
-        // Adicionar eventos de clique
-        this.faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            if (question) {
-                question.addEventListener('click', () => this.toggleFAQItem(item));
-            }
-        });
-    },
-    
     /**
-     * Alterna o estado de um item de FAQ
-     * @param {HTMLElement} item - O item de FAQ a ser alternado
+     * Controlador de FAQ Corrigido
+     * Gerencia a abertura e fechamento dos itens de FAQ e animação dos ícones
      */
-    toggleFAQItem: function(item) {
-        // Fechar outros itens abertos
-        this.faqItems.forEach(otherItem => {
-            if (otherItem !== item && otherItem.classList.contains('active')) {
-                otherItem.classList.remove('active');
-            }
-        });
+    const FAQController = {
+        faqItems: null,
         
-        // Alternar o estado do item atual
-        item.classList.toggle('active');
-    }
-};
+        /**
+         * Inicializa o controlador de FAQ
+         */
+        init: function() {
+            // Selecionar todos os itens de FAQ
+            this.faqItems = document.querySelectorAll('.faq-item');
+            
+            if (this.faqItems.length === 0) {
+                console.warn('FAQController: Nenhum item de FAQ encontrado');
+                return;
+            }
+            
+            console.log('FAQController: Inicializando com', this.faqItems.length, 'itens');
+            
+            // Adicionar eventos de clique em cada pergunta
+            this.faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                if (question) {
+                    // Remover qualquer evento anterior para evitar duplicação
+                    const newQuestion = question.cloneNode(true);
+                    question.parentNode.replaceChild(newQuestion, question);
+                    
+                    // Adicionar novo evento de clique
+                    newQuestion.addEventListener('click', () => {
+                        this.toggleFAQItem(item);
+                    });
+                } else {
+                    console.warn('FAQController: Elemento .faq-question não encontrado em um item');
+                }
+            });
+        },
+        
+        /**
+         * Alterna o estado de um item de FAQ
+         * @param {HTMLElement} item - O item de FAQ a ser alternado
+         */
+        toggleFAQItem: function(item) {
+            if (!item) return;
+            
+            // Verificar se o item já está ativo
+            const isActive = item.classList.contains('active');
+            
+            // Fechar outros itens abertos (opcional, remova se quiser permitir múltiplos abertos)
+            this.faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    
+                    // Atualizar ícone para '+'
+                    const toggle = otherItem.querySelector('.faq-toggle i');
+                    if (toggle) {
+                        toggle.className = 'fas fa-plus';
+                    }
+                }
+            });
+            
+            // Alternar o estado do item atual
+            item.classList.toggle('active');
+            
+            // Atualizar o ícone
+            const toggle = item.querySelector('.faq-toggle i');
+            if (toggle) {
+                // Se o item agora está ativo, mostrar '-', caso contrário mostrar '+'
+                if (item.classList.contains('active')) {
+                    toggle.className = 'fas fa-minus';
+                } else {
+                    toggle.className = 'fas fa-plus';
+                }
+            }
+        }
+    };
+
+// Garantir que o controlador seja inicializado quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar o controlador de FAQ
+    FAQController.init();
+});
 
 /**
  * Slider de Depoimentos
