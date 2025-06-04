@@ -96,69 +96,55 @@ const HeaderController = {
     }
 };
 
-/**
- * Controlador do Menu Mobile
- * Gerencia a abertura, fechamento e interações do menu mobile
- */
-const MobileMenuController = {
-    mobileMenu: null,
-    menuToggle: null,
-    closeMenu: null,
-    overlay: null,
-    mobileNavLinks: null,
-    
     /**
-     * Inicializa o controlador do menu mobile
+     * Controlador do Menu Mobile
+     * Gerencia a abertura, fechamento e interações do menu mobile
      */
-    init: function() {
-        this.mobileMenu = document.getElementById('mobile-menu');
-        this.menuToggle = document.querySelector('.menu-toggle');
-        this.closeMenu = document.querySelector('.close-menu');
-        this.mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+    const MobileMenuController = {
+        mobileMenu: null,
+        menuToggle: null,
+        closeButton: null, // <-- renomeado
+        overlay: null,
+        mobileNavLinks: null,
         
-        if (!this.mobileMenu || !this.menuToggle) return;
+        init: function() {
+            this.mobileMenu = document.getElementById('mobile-menu');
+            this.menuToggle = document.querySelector('.menu-toggle');
+            this.closeButton = document.querySelector('.close-menu'); // <-- renomeado
+            this.mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+            
+            if (!this.mobileMenu || !this.menuToggle) return;
+            
+            this.createOverlay();
+            
+            this.menuToggle.addEventListener('click', this.openMenu.bind(this));
+            this.closeButton.addEventListener('click', this.closeMenu.bind(this)); // <-- corrigido
+            this.overlay.addEventListener('click', this.closeMenu.bind(this));
+            
+            this.mobileNavLinks.forEach(link => {
+                link.addEventListener('click', this.closeMenu.bind(this));
+            });
+        },
         
-        // Criar e configurar overlay
-        this.createOverlay();
+        createOverlay: function() {
+            this.overlay = document.createElement('div');
+            this.overlay.className = 'overlay';
+            document.body.appendChild(this.overlay);
+        },
         
-        // Adicionar event listeners
-        this.menuToggle.addEventListener('click', this.openMenu.bind(this));
-        this.closeMenu.addEventListener('click', this.closeMenu.bind(this));
-        this.overlay.addEventListener('click', this.closeMenu.bind(this));
+        openMenu: function() {
+            this.mobileMenu.classList.add('active');
+            this.overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        },
         
-        // Adicionar eventos aos links do menu mobile
-        this.mobileNavLinks.forEach(link => {
-            link.addEventListener('click', this.closeMenu.bind(this));
-        });
-    },
-    
-    /**
-     * Cria o elemento overlay para o menu mobile
-     */
-    createOverlay: function() {
-        this.overlay = document.createElement('div');
-        this.overlay.className = 'overlay';
-        document.body.appendChild(this.overlay);
-    },
-    
-    /**
-     * Abre o menu mobile
-     */
-    openMenu: function() {
-        this.mobileMenu.classList.add('active');
-        this.overlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Previne rolagem do body
-    },
-    
-    /**
-     * Fecha o menu mobile
-     */
-    closeMenu: function() {
-        this.mobileMenu.classList.remove('active');
-        this.overlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restaura rolagem do body
-    }
-};
+        closeMenu: function() {
+            this.mobileMenu.classList.remove('active');
+            this.overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
 
     /**
      * Controlador de Navegação
