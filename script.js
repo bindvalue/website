@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initParallaxEffects();
     initHeaderScroll();
     initButtonEffects();
+    initPricingAnimations();
+    initPDFSignatureAnimations();
     
     console.log('BindValue.dev loaded successfully!');
 });
@@ -39,6 +41,11 @@ function initScrollAnimations() {
                 if (entry.target.classList.contains('faq-list')) {
                     staggerFAQItems(entry.target);
                 }
+                
+                // Pricing animations
+                if (entry.target.classList.contains('pricing-grid')) {
+                    staggerPricingItems(entry.target);
+                }
             }
         });
     }, observerOptions);
@@ -50,6 +57,8 @@ function initScrollAnimations() {
         .process-timeline,
         .cases-grid,
         .pdf-content,
+        .pricing-grid,
+        .pdf-signature-card,
         .faq-list,
         .cta-content,
         .footer-content
@@ -92,6 +101,105 @@ function staggerFAQItems(container) {
             item.style.transform = 'translateY(0)';
         }, index * 100);
     });
+}
+
+// Stagger pricing item animations
+function staggerPricingItems(container) {
+    const items = container.querySelectorAll('.pricing-card');
+    items.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.add('animate-in');
+        }, index * 150);
+    });
+}
+
+// Pricing animations
+function initPricingAnimations() {
+    const pricingCards = document.querySelectorAll('.pricing-card');
+    
+    // Add hover effects for pricing cards
+    pricingCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = this.classList.contains('featured') 
+                ? 'scale(1.05) translateY(-10px)' 
+                : 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = this.classList.contains('featured') 
+                ? 'scale(1.05)' 
+                : 'translateY(0)';
+        });
+    });
+    
+    // Add click tracking for pricing buttons
+    const pricingButtons = document.querySelectorAll('.pricing-button');
+    pricingButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const planName = this.closest('.pricing-card').querySelector('h3').textContent;
+            console.log(`Plano selecionado: ${planName}`);
+            
+            // Add ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+}
+
+// PDF Signature animations
+function initPDFSignatureAnimations() {
+    const pdfCard = document.querySelector('.pdf-signature-card');
+    
+    if (pdfCard) {
+        // Add hover effects for PDF card
+        pdfCard.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+        
+        pdfCard.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    }
+    
+    // Add click tracking for PDF button
+    const pdfButton = document.querySelector('.pdf-button');
+    if (pdfButton) {
+        pdfButton.addEventListener('click', function(e) {
+            console.log('Plano PDF selecionado: Assinatura Digital Completo');
+            
+            // Add ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    }
 }
 
 // FAQ Functionality
@@ -197,7 +305,7 @@ function initHeaderScroll() {
 // Button Effects and Interactions
 function initButtonEffects() {
     // Add ripple effect to buttons
-    const buttons = document.querySelectorAll('.primary-button, .secondary-button, .cta-button');
+    const buttons = document.querySelectorAll('.primary-button, .secondary-button, .cta-button, .pricing-button, .pdf-button');
     
     buttons.forEach(button => {
         button.addEventListener('click', function(e) {
@@ -420,6 +528,12 @@ animationStyles.textContent = `
 `;
 
 document.head.appendChild(animationStyles);
+
+// Load pricing styles
+const pricingStyles = document.createElement('link');
+pricingStyles.rel = 'stylesheet';
+pricingStyles.href = 'pricing-styles.css';
+document.head.appendChild(pricingStyles);
 
 // Performance optimization: Debounce scroll events
 function debounce(func, wait) {

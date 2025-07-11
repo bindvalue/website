@@ -1,0 +1,541 @@
+/* Pricing Section Styles */
+.pricing {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.pricing .container {
+    position: relative;
+    z-index: 2;
+}
+
+.pricing .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.pricing .section-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pricing .section-header p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.pricing .section-header p i {
+    margin-right: 10px;
+    color: #F59E0B;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.pricing-card:hover::before {
+    opacity: 1;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pricing-card.featured {
+    border: 2px solid #F59E0B;
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #F59E0B, #EF4444);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.pricing-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.price {
+    margin-bottom: 15px;
+}
+
+.price .currency {
+    font-size: 1.5rem;
+    color: #F59E0B;
+    font-weight: 600;
+    vertical-align: top;
+}
+
+.price .amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #F59E0B;
+    text-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+}
+
+.price.custom .amount {
+    font-size: 2rem;
+    color: #F59E0B;
+}
+
+.plan-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.pricing-features {
+    margin-bottom: 40px;
+}
+
+.pricing-features .feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: 500;
+}
+
+.pricing-features .feature-item i {
+    color: #10B981;
+    margin-right: 12px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.pricing-button {
+    width: 100%;
+    background: linear-gradient(45deg, #F59E0B, #EF4444);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.pricing-button:hover::before {
+    left: 100%;
+}
+
+.pricing-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+}
+
+.pricing-button:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pricing {
+        padding: 60px 0;
+    }
+    
+    .pricing .section-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .pricing-card {
+        padding: 30px 20px;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .pricing-card.featured:hover {
+        transform: translateY(-10px);
+    }
+    
+    .price .amount {
+        font-size: 2.5rem;
+    }
+    
+    .price.custom .amount {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .pricing .section-header p {
+        font-size: 1.1rem;
+    }
+    
+    .pricing-card {
+        padding: 25px 15px;
+    }
+    
+    .pricing-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .price .amount {
+        font-size: 2rem;
+    }
+    
+    .price.custom .amount {
+        font-size: 1.5rem;
+    }
+    
+    .popular-badge {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+    }
+}
+
+/* Animation for pricing cards */
+.pricing-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.pricing-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation for pricing cards */
+.pricing-grid .pricing-card:nth-child(1) { transition-delay: 0.1s; }
+.pricing-grid .pricing-card:nth-child(2) { transition-delay: 0.2s; }
+.pricing-grid .pricing-card:nth-child(3) { transition-delay: 0.3s; }
+.pricing-grid .pricing-card:nth-child(4) { transition-delay: 0.4s; }
+
+
+
+/* PDF Digital Signature Section Styles */
+.pdf-signature {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-signature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 70%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.pdf-signature .container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdf-signature-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+}
+
+.pdf-signature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.pdf-signature-card:hover::before {
+    opacity: 1;
+}
+
+.pdf-signature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pdf-signature-header {
+    margin-bottom: 40px;
+}
+
+.pdf-signature-icon {
+    font-size: 3rem;
+    color: #F59E0B;
+    margin-bottom: 20px;
+}
+
+.pdf-signature-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-plan h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.pdf-price {
+    margin-bottom: 15px;
+}
+
+.pdf-price .currency {
+    font-size: 1.5rem;
+    color: #F59E0B;
+    font-weight: 600;
+    vertical-align: top;
+}
+
+.pdf-price .amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #F59E0B;
+    text-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+}
+
+.pdf-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.pdf-features {
+    margin-bottom: 40px;
+}
+
+.pdf-feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: 500;
+    justify-content: flex-start;
+}
+
+.pdf-feature-item i {
+    color: #10B981;
+    margin-right: 12px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.pdf-button {
+    width: 100%;
+    background: linear-gradient(45deg, #F59E0B, #EF4444);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.pdf-button:hover::before {
+    left: 100%;
+}
+
+.pdf-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+}
+
+.pdf-button:active {
+    transform: translateY(0);
+}
+
+/* Animation for PDF signature card */
+.pdf-signature-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.pdf-signature-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design for PDF Signature */
+@media (max-width: 768px) {
+    .pdf-signature {
+        padding: 60px 0;
+    }
+    
+    .pdf-signature-card {
+        padding: 40px 30px;
+        margin: 0 20px;
+    }
+    
+    .pdf-signature-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .pdf-signature-icon {
+        font-size: 2.5rem;
+    }
+    
+    .pdf-price .amount {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-signature-card {
+        padding: 30px 20px;
+    }
+    
+    .pdf-signature-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .pdf-plan h3 {
+        font-size: 1.5rem;
+    }
+    
+    .pdf-price .amount {
+        font-size: 2rem;
+    }
+    
+    .pdf-signature-icon {
+        font-size: 2rem;
+    }
+}
+
